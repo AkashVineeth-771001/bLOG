@@ -409,12 +409,19 @@ export default function App() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 1 }}
           >
-            <a 
+            <motion.a 
               href="#portfolio" 
-              className="px-12 py-5 bg-gold text-midnight text-[11px] font-bold uppercase tracking-[0.2em] rounded-sm hover:bg-white transition-all duration-500 shadow-2xl shadow-gold/10"
+              whileHover={{ 
+                scale: 1.05,
+                backgroundColor: "#ffffff",
+                color: "#0F0F0F",
+                boxShadow: "0 25px 50px -12px rgba(197, 157, 95, 0.25)"
+              }}
+              whileTap={{ scale: 0.95 }}
+              className="px-12 py-5 bg-gold text-midnight text-[11px] font-bold uppercase tracking-[0.2em] rounded-sm transition-all duration-300 shadow-2xl shadow-gold/10 inline-block"
             >
               Explore My Work
-            </a>
+            </motion.a>
           </motion.div>
         </div>
         
@@ -434,7 +441,6 @@ export default function App() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-20"
           >
             <span className="text-[11px] font-bold uppercase tracking-[0.4em] text-gold mb-4 block">
               Background
@@ -459,25 +465,20 @@ export default function App() {
                 Using my background in Mass Communication and experience at The New Indian Express, I capture the details others overlook. I offer professional writing and editorial support on a sliding scale, ensuring impactful storytelling is accessible to everyone.
               </p>
             </div>
-          </motion.div>
 
-          {/* Expertise Section - Simplified to complement the new About layout */}
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="pt-16 border-t border-white/5"
-          >
-            <div className="flex items-center gap-5 mb-10 text-gold">
-              <PenTool size={28} strokeWidth={1.5} />
-              <h3 className="text-2xl font-serif">Core Expertise</h3>
-            </div>
-            <div className="flex flex-wrap gap-4">
-              {['Investigative Reporting', 'Feature Writing', 'Digital Storytelling', 'Editorial Strategy', 'Media Ethics', 'Public Relations'].map(skill => (
-                <span key={skill} className="px-5 py-2.5 bg-white/5 rounded-full text-[11px] font-bold uppercase tracking-widest border border-white/5 hover:border-gold/30 transition-colors">
-                  {skill}
-                </span>
-              ))}
+            {/* Expertise Section */}
+            <div className="pt-16 mt-16 border-t border-white/5">
+              <div className="flex items-center gap-5 mb-10 text-gold">
+                <PenTool size={28} strokeWidth={1.5} />
+                <h3 className="text-2xl font-serif">Core Expertise</h3>
+              </div>
+              <div className="flex flex-wrap gap-4">
+                {['Investigative Reporting', 'Feature Writing', 'Digital Storytelling', 'Editorial Strategy', 'Media Ethics', 'Public Relations'].map(skill => (
+                  <span key={skill} className="px-5 py-2.5 bg-white/5 rounded-full text-[11px] font-bold uppercase tracking-widest border border-white/5 hover:border-gold/30 transition-colors">
+                    {skill}
+                  </span>
+                ))}
+              </div>
             </div>
           </motion.div>
         </div>

@@ -12,6 +12,10 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
   body {
     @apply bg-midnight text-soft-white font-sans antialiased selection:bg-gold selection:text-midnight;
   }
